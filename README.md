@@ -1,3 +1,3 @@
 ﻿# Orbital-Mechanics
 
-Within Python, I am creating an astrodynamics system, which simulates the spacecraft trajectory and attitude modelling. 
+Within Python, I am building an astrodynamics system, which simulates the spacecraft trajectory and attitude modelling. 
