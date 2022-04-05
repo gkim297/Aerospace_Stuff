@@ -1,3 +1,4 @@
+//this program is to run the radar system. 
 import processing.serial.*; // imports library for serial communication
 import java.awt.event.KeyEvent; // imports library for reading the data from the serial port
 import java.io.IOException;
