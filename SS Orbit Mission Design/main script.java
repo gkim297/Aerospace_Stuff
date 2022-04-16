@@ -1,17 +1,17 @@
 main script
 */
 
-const propagate_button  = document.getElementById( "propagate_button" );
-const animate_button    = document.getElementById( "animate_button" );
-const hs_checkbox       = document.getElementById( 'hs-checkbox' );
-const eq_plane_checkbox = document.getElementById( 'active-eq-plane' );
-const vinf_checkbox     = document.getElementById( 'vinf-checkbox' );
-const vinf_input_x      = document.getElementById( 'vinf-input-x' );
-const vinf_input_y      = document.getElementById( 'vinf-input-y' );
-const vinf_input_z      = document.getElementById( 'vinf-input-z' );
+const propagate_button  = document.getElementById("propagate_button");
+const animate_button    = document.getElementById("animate_button");
+const hs_checkbox       = document.getElementById('hs-checkbox');
+const eq_plane_checkbox = document.getElementById('active-eq-plane');
+const vinf_checkbox     = document.getElementById('vinf-checkbox');
+const vinf_input_x      = document.getElementById('vinf-input-x');
+const vinf_input_y      = document.getElementById('vinf-input-y');
+const vinf_input_z      = document.getElementById('vinf-input-z');
 
-propagate_button.addEventListener( "click", create_stationary_plots );
-animate_button.addEventListener( "click", create_animated_plots );
+propagate_button.addEventListener("click", create_stationary_plots);
+animate_button.addEventListener("click", create_animated_plots);
 
 const N_STATE_VECTOR_INPUTS  = 2;
 const N_COES_INPUTS          = 2;
@@ -22,44 +22,44 @@ var CB = EARTH;
 set_defaults();
 
 function open_dropdown() {
-	document.getElementById( 'dropdown' ).classList.toggle( 'show' );
+	document.getElementById('dropdown').classList.toggle('show');
 }
 
-window.onclick = function( event ) {
-  if ( !event.target.matches( '.dropbtn' ) ) {
-    var dropdowns = document.getElementsByClassName( 'dropdown-content' );
-    for ( var n = 0; n < dropdowns.length; n++ ) {
-      var openDropdown = dropdowns[ n ];
-      if ( openDropdown.classList.contains( 'show' ) ) {
-        openDropdown.classList.remove( 'show' );
+window.onclick = function(event) {
+  if (!event.target.matches('.dropbtn')) {
+    var dropdowns = document.getElementsByClassName('dropdown-content');
+    for (var n = 0; n < dropdowns.length; n++){
+      var openDropdown = dropdowns[n];
+      if (openDropdown.classList.contains('show')) {
+        openDropdown.classList.remove('show');
       }
     }
   }
 }
 
-function set_central_body_earth() {
+function set_central_body_earth(){
 	CB = EARTH;
 	set_defaults();
 	create_stationary_plots();
 }
 
-function set_central_body_mars() {
+function set_central_body_mars(){
 	CB = MARS;
 	set_defaults();
 	create_stationary_plots();
 }
 
-function set_central_body_moon() {
+function set_central_body_moon(){
 	CB = MOON;
 	set_defaults();
 	create_stationary_plots();
 }
 
-function set_defaults() {
-	for( var n = 0; n < N_STATE_VECTOR_INPUTS; n++ ) {
-		document.getElementById( "rx" + n ).value = CB[ 'defaults' ][ 'rx' + n ];
-		document.getElementById( "ry" + n ).value = CB[ 'defaults' ][ 'ry' + n ];
-		document.getElementById( "rz" + n ).value = CB[ 'defaults' ][ 'rz' + n ];
+function set_defaults(){
+	for(var n = 0; n < N_STATE_VECTOR_INPUTS; n++){
+		document.getElementById("rx" + n).value = CB['defaults']['rx' + n];
+		document.getElementById("ry" + n).value = CB['defaults']['ry' + n];
+		document.getElementById("rz" + n).value = CB['defaults']['rz' + n];
 		document.getElementById( "vx" + n ).value = CB[ 'defaults' ][ 'vx' + n ];
 		document.getElementById( "vy" + n ).value = CB[ 'defaults' ][ 'vy' + n ];
 		document.getElementById( "vz" + n ).value = CB[ 'defaults' ][ 'vz' + n ];
